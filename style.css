@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --gray: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased; /*S[o funciona em navegadores webkit*/
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+main {
+  background: url(images/background.svg) no-repeat center;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
+}
+
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--gray);
+}
+
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative;
+}
+
+img#userImage:hover {
+  transform: scale(1.2);
+}
+
+.avatar span {
+  position: absolute;
+  top: -15px;
+  z-index: 1;
+}
+
+#selo img {
+  opacity: 0.6;
+  transition: 2s;
+}
+
+#selo img:hover {
+  transform: rotate(180deg);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover; /*Se adapta*/
+
+  clip-path: polygon(
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%
+  ); /*Formata a img em farmatos especificos*/
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--gray);
+  text-decoration: none;
+  margin-top: 0.25rem;
+
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 4rem;
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+#socialLinks li img {
+  border-radius: 25%;
+  transition: 1s;
+  opacity: 0.8;
+}
+
+#socialLinks li img:hover {
+  transform: rotate(360deg);
+  transition: 0.8s;
+  opacity: 1;
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 960px) {
+  main {
+    font-size: 1.1rem;
+    background: url(images/background.svg) no-repeat center/cover;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .container {
+    max-width: 350px;
+  }
+
+  .avatar {
+    width: 20rem;
+    margin: 5rem auto 0;
+    position: relative;
+  }
+
+  .avatar img#userImage {
+    width: 300px;
+    height: 300px;
+  }
+
+  #socialLinks li img {
+    width: 3.8rem;
+  }
+}
